@@ -1,0 +1,63 @@
+{
+	"pages": [{
+		"path": "pages/home/list/index",
+		"style": {
+			"navigationBarTitleText": "首页",
+			"enablePullDownRefresh": true
+		}
+	}, {
+		"path": "pages/home/add/index",
+		"style": {
+			"navigationBarTitleText": "新增",
+			"enablePullDownRefresh": false
+		}
+	}, {
+		"path": "pages/map/index",
+		"style": {
+			"navigationBarTitleText": "列表页面",
+			"enablePullDownRefresh": false
+		}
+	}, {
+		"path": "pages/user/index",
+		"style": {
+			"navigationBarTitleText": "用户页面",
+			"enablePullDownRefresh": false
+		}
+	}],
+	"tabBar": {
+		"color": "#7A7E83",
+		"selectedColor": "#3cc51f",
+		"list": [{
+				"pagePath": "pages/home/list/index",
+				"iconPath": "static/images/react.png",
+				"selectedIconPath": "static/images/react_cur.png",
+				"text": "首页"
+			}, {
+				"pagePath": "pages/map/index",
+				"iconPath": "static/images/vscode.png",
+				"selectedIconPath": "static/images/vscode_cur.png",
+				"text": "点我"
+			},
+			{
+				"pagePath": "pages/user/index",
+				"iconPath": "static/images/vue.png",
+				"selectedIconPath": "static/images/vue_cur.png",
+				"text": "用户"
+			}
+		]
+	},
+	"globalStyle": {
+		"navigationBarTextStyle": "black",
+		"navigationBarTitleText": "uni-app",
+		"navigationBarBackgroundColor": "#F8F8F8",
+		"backgroundColor": "#F8F8F8"
+	},
+	"easycom": {
+		"autoscan": true,
+		"custom": {
+			// uni-ui 规则如下配置
+			"^uni-(.*)": "@dcloudio/uni-ui/lib/uni-$1/uni-$1.vue"
+		}
+	},
+	"uniIdRouter": {}
+}

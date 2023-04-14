@@ -39,25 +39,29 @@
 	const tableData = ref([]);
 	const record = ref(null);
 
-	onMounted(() => getList());
-
-	// onShow(() => getList());
+	onShow(() => getList());
 
 	// 列表
 	const getList = () => {
+		uni.showLoading({
+			title: '加载中'
+		});
+		
 		uniCloud.callFunction({
 			name: 'home',
 			data: {
 				type: 'list',
 			}
 		}).then((res) => {
-			if (res?.result?.affectedDocs >= 0) {
+			if (res?.result?.data) {
 				tableData.value = res?.result?.data;
 			} else {
 				uni.showToast({
 					title: '列表数据异常！',
 				});
 			}
+		}).finally(() => {
+			uni.hideLoading();
 		});
 	};
 

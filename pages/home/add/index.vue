@@ -11,9 +11,8 @@
 				<uni-easyinput type="textarea" v-model="model.introduction" placeholder="请输入自我介绍" />
 			</uni-forms-item>
 		</uni-forms>
-		<button type="primary" @click="onSubmit">提交</button>
+		<button type="primary" :disabled="loading" @click="onSubmit">提交</button>
 		<button @click="onReset">重置</button>
-		<button @click="goBack">返回列表</button>
 	</view>
 </template>
 
@@ -29,6 +28,7 @@
 	let formRef = ref(null);
 	const currentType = ref('add');
 	const currentId = ref(null);
+	const loading = ref(false);
 
 	const model = ref({
 		name: '',
@@ -51,10 +51,10 @@
 		},
 	})
 
-	onLoad(({
-		type,
-		id
-	}) => {
+	onLoad((option) => {
+		const id = option?.id;
+		const type = option?.type;
+		
 		currentType.value = type;
 		currentId.value = id;
 
@@ -85,6 +85,7 @@
 	}
 
 	const onAdd = (formVal) => {
+		loading.value = true;
 		uniCloud.callFunction({
 			name: 'home',
 			data: {
@@ -96,9 +97,7 @@
 				uni.showToast({
 					title: '添加成功！',
 				});
-				setTimeout(() => {
-					uni.navigateBack();
-				}, 1000);
+				loading.value = true;
 			};
 		});
 	}
@@ -145,11 +144,6 @@
 		model.value.introduction = '';
 	}
 
-	const goBack = () => {
-		uni.switchTab({
-			url: '/pages/home/list/index'
-		})
-	}
 </script>
 
 <style scoped lang="scss">

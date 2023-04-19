@@ -3,17 +3,19 @@
 		<uni-table ref="table" :loading="loading" border stripe type="selection" emptyText="暂无更多数据"
 			@selection-change="selectionChange">
 			<uni-tr>
-				<uni-th width="60" align="center">姓名</uni-th>
-				<uni-th width="60" align="center">年龄</uni-th>
-				<uni-th width="100" align="center">自我介绍</uni-th>
-				<uni-th width="120" align="center">设置</uni-th>
+				<uni-th width="60" align="center">钢材类型</uni-th>
+				<uni-th width="60" align="center">今日报价</uni-th>
+				<uni-th width="120" align="center">当前时间</uni-th>
+				<uni-th width="100" align="center">备注</uni-th>
+				<uni-th width="80" align="center">设置</uni-th>
 			</uni-tr>
 			<uni-tr v-for="(item, index) in tableData" :key="index">
-				<uni-td>{{ item.name }}</uni-td>
+				<uni-td>{{ steelEnum[item.steelType] }}</uni-td>
 				<uni-td>
-					<view class="name">{{ item.age }}</view>
+					<view class="name">{{ item.price }}</view>
 				</uni-td>
-				<uni-td align="center">{{ item.introduction }}</uni-td>
+				<uni-td align="center">{{ item.time }}</uni-td>
+				<uni-td align="center">{{ item.remarks }}</uni-td>
 				<uni-td>
 					<view class="uni-group">
 						<uni-icons type="compose" size="30" @click="() => onUpdate(item)" />
@@ -38,6 +40,11 @@
 	const loading = ref(false);
 	const tableData = ref([]);
 	const record = ref(null);
+	const steelEnum = {
+		0:"方坯",
+		1:"刚坯",
+		2:"废钢",
+	}
 
 	onShow(() => getList());
 

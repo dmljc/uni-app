@@ -2,11 +2,13 @@ lockfileVersion: 5.4
 
 specifiers:
   '@dcloudio/uni-ui': ^1.4.26
+  '@qiun/vue-ucharts': 2.5.0-20230101
   sass: ^1.61.0
   sass-loader: 10.1.1
 
 dependencies:
   '@dcloudio/uni-ui': 1.4.26
+  '@qiun/vue-ucharts': 2.5.0-20230101
 
 devDependencies:
   sass: 1.61.0
@@ -16,6 +18,10 @@ packages:
 
   /@dcloudio/uni-ui/1.4.26:
     resolution: {integrity: sha512-JpYXNi9WEmFeTcF6EWrksrMqA0HEl76nxW/Imd0PW1qm/7TORAGSpvMmEDYrMQ3vIbRQFV+n6bhiJIWi34u/5Q==}
+    dev: false
+
+  /@qiun/vue-ucharts/2.5.0-20230101:
+    resolution: {integrity: sha512-HZ4q6CBjzheAmocr//jY2nV3wO2Xu+2CX6NjwUD+uM1Jo/ewlnNIL2TiRRqtwMBhyaIoJh4nCzmnoeT7kUvlxA==}
     dev: false
 
   /@types/json-schema/7.0.11:

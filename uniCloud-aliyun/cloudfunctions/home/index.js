@@ -40,14 +40,16 @@ const onAdd = async (event) => {
 // 编辑
 const onUpdate = async (event) => {
 	const {
-		name,
-		age,
-		introduction
+		steelType,
+		price,
+		time,
+		remarks,
 	} = event;
 	const resp = await db.collection('home_list').doc(event.id).update({
-		name,
-		age,
-		introduction
+		steelType,
+		price,
+		time,
+		remarks,
 	});
 	return resp;
 }

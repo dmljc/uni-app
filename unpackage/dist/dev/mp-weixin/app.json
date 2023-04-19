@@ -1,0 +1,39 @@
+{
+  "pages": [
+    "pages/home/list/index",
+    "pages/home/add/index",
+    "pages/map/index",
+    "pages/user/index"
+  ],
+  "window": {
+    "navigationBarTextStyle": "black",
+    "navigationBarTitleText": "uni-app",
+    "navigationBarBackgroundColor": "#F8F8F8",
+    "backgroundColor": "#F8F8F8"
+  },
+  "tabBar": {
+    "color": "#7A7E83",
+    "selectedColor": "#3cc51f",
+    "list": [
+      {
+        "pagePath": "pages/home/list/index",
+        "iconPath": "static/images/react.png",
+        "selectedIconPath": "static/images/react_cur.png",
+        "text": "首页"
+      },
+      {
+        "pagePath": "pages/map/index",
+        "iconPath": "static/images/vscode.png",
+        "selectedIconPath": "static/images/vscode_cur.png",
+        "text": "点我"
+      },
+      {
+        "pagePath": "pages/user/index",
+        "iconPath": "static/images/vue.png",
+        "selectedIconPath": "static/images/vue_cur.png",
+        "text": "用户"
+      }
+    ]
+  },
+  "usingComponents": {}
+}
